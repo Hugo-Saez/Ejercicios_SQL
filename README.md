@@ -9,7 +9,8 @@
 <strong>create database vuelos character set Latin1 collate latin1_spanish_ci;</strong>
 
 >2.Renombra la base de datos a viajes.<br>
-<strong>create database viajes character set Latin1 collate latin1_spanish_ci;</strong>
+<strong>create database viajes character set Latin1 collate latin1_spanish_ci;</strong><br>
+<strong>drop database vuelos;</strong>
 
 >3.Crea una tabla denominada clientes que contendrá los siguientes campos:
 * id 
