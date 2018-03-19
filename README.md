@@ -8,7 +8,7 @@
 
 <strong>create database vuelos character set Latin1 collate latin1_spanish_ci;</strong>
 
->2.Renombra la base de datos a viajes.
+>2.Renombra la base de datos a viajes.<br>
 <strong>create database viajes character set Latin1 collate latin1_spanish_ci;</strong>
 
 >3.Crea una tabla denominada clientes que contendrá los siguientes campos:
@@ -24,12 +24,12 @@
 * direccion
   * varchar(150)
   
-  <strong><p>create table clientes(
-	id integer auto_increment not null primary key,
-    nombre varchar(50),
-    apellidos varchar(50),
-    direccion varchar(150)
-);</strong>
+  <strong>create table clientes(<br>
+	  id integer auto_increment not null primary key,<br>
+    	  nombre varchar(50),<br>
+    	  apellidos varchar(50),<br>
+   	  direccion varchar(150)<br>
+	  );</strong><br>
 
 >4.Crea una tabla denominada viajes que contendrá los siguientes campos:
 * id
@@ -45,25 +45,25 @@
   *Integer 
   *Forgein key clientes(id)
   
-  <strong>create table viajes(
-	id integer auto_increment not null primary key,
-    titulo varchar(50),
-    descripcion varchar(150),
-    codigoCliente integer,
-    foreign key(codigoCliente) references clientes(id)
-);</strong>
+  <strong>create table viajes(<br>
+	  id integer auto_increment not null primary key,<br>
+    	  titulo varchar(50),<br>
+    	  descripcion varchar(150),<br>
+    	  codigoCliente integer,<br>
+   	  foreign key(codigoCliente) references clientes(id)<br>
+	  );</strong><br>
 
 ### LENGUAJE DML
 >1. Utilizando la base de datos Sakila (BD de Pruebas de MySQL)
-Extraer todos los actores de la tabla actors.
+Extraer todos los actores de la tabla actors.<br>
 <strong>select * from actor;</strong>
 
->2. De la tabla actors queremos conocer todos los nombres existentes en la tabla sin que se repita para ello utilizaremos DISTINCT.
+>2. De la tabla actors queremos conocer todos los nombres existentes en la tabla sin que se repita para ello utilizaremos DISTINCT.<br>
 <strong>select distinct first_name from actor;</strong>
 
 >3. De la tabla film queemos obtenter una relación de películas que cumplan las siguientes características:
 * rental_duration = 6
-* rental_rate >=2.99
+* rental_rate >=2.99<br>
 <strong>select * from film where rental_duration = 6 and rental_rate >= 2.99;</strong>
 
 >4. De la tabla film queremos obtener una relación de la peliculas que tengan un replacement_cost entre 15.99 y 22.99
@@ -72,5 +72,5 @@ Extraer todos los actores de la tabla actors.
 
 >5.  Queremos Obtener todos los customers mediante el filtro de pertenencia a conjuntos IN que cumpla los siguientes requisitos.
 * Pertenecen al store 1
-* Y su first_name = MARY, o NANCY  o DONNA.
+* Y su first_name = MARY, o NANCY  o DONNA.<br>
 <strong>select * from customer where store_id = 1 and first_name in('mary', 'nancy', 'donna');</strong>
